@@ -7,9 +7,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Exercice3Component implements OnInit {
 
-  constructor() { }
+  statut: boolean ;
+  displayP1: string = "block";
+  displayP2: string = "none";
+
+  constructor() { 
+    this.statut = true;
+  }
 
   ngOnInit() {
   }
+
+  switchP(): void{
+    this.statut = ! this.statut;
+    console.log(this.statut);
+    if(this.statut){
+      this.displayP1 = "block";
+      this.displayP2 = "none";
+    } else {
+      this.displayP1 = "none";
+      this.displayP2 = "block";
+    }
+  }
+
+
+
 
 }
